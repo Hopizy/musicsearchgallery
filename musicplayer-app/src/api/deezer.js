@@ -1,16 +1,12 @@
-// src/api/deezer.js
-import axios from "axios";
-
-const deezerApi = axios.create({
-  baseURL: "https://api.deezer.com",
-});
-
-export async function searchTracks(query) {
-  try {
-    const res = await deezerApi.get(`/search?q=${query}`);
-    return res.data.data; // array of tracks
-  } catch (error) {
-    console.error("Error fetching tracks:", error);
-    return [];
-  }
+export default async function handler(req, res) {
+const { q } = req.query;
+if (!q) return res.status(400).json({ error: 'Missing q' });
+try {
+const r = await fetch(`https://api.deezer.com/search?q=${encodeURIComponent(q)}`);
+const data = await r.json();
+res.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate=300');
+return res.status(200).json(data);
+} catch (e) {
+return res.status(500).json({ error: 'Upstream error', details: String(e) });
+}
 }

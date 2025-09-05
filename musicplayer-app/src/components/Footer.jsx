@@ -1,3 +1,4 @@
+
 export default function Footer() {
   return (
     <footer className="fixed bottom-0 left-0 w-full bg-gray-900 text-gray-400 py-6 mt-10">
@@ -10,7 +11,7 @@ export default function Footer() {
           <a href="/" className="hover:text-white">Home</a>
           <a href="/about" className="hover:text-white">About</a>
           <a href="/login" className="hover:text-white">Login</a>
-          <a href="contact" className="hover:text-white">Contact</a>
+          <a href="/contact" className="hover:text-white">Contact</a>
         </nav>
 
         {/* Copyright */}

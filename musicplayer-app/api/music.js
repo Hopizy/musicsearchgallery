@@ -1,10 +1,17 @@
+// /api/music.js
 export default async function handler(req, res) {
+  const { q } = req.query; // search query from frontend
+
   try {
-    const response = await fetch("https://api.deezer.com/chart", {
+    const url = q
+      ? `https://api.deezer.com/search?q=${encodeURIComponent(q)}`
+      : `https://api.deezer.com/chart`;
+
+    const response = await fetch(url, {
       headers: {
         "Content-Type": "application/json",
-        "User-Agent": "Vercel-App" // helps with some APIs
-      }
+        "User-Agent": "Vercel-App", // helps avoid blocks
+      },
     });
 
     if (!response.ok) {

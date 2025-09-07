@@ -9,7 +9,7 @@ import Contact from './pages/Contact'
 export default function App() {
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-28 bg-[url('/backimage.jpg')]">
+    <div className="min-h-screen bg-gray-50 pb-28 bg-[url('/backimage.jpg')]bg-cover bg-center">
       {/* Header with navigation */}
       <header className="z-10 bg-red border-b">
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center gap-6">
@@ -34,8 +34,8 @@ export default function App() {
       </main>
       
       {/* Persistent music player at the bottom */}
-      <MusicPlayer/>
-   <Footer />
+      <MusicPlayer className=fixed bottom-16 left-0 right-0 max-w-5xl mx-auto"/>
+   <Footer className="fixed bottom-0 left-0 right-0"/>
     </div>
   )
 }

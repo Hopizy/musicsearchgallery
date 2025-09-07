@@ -34,7 +34,7 @@ export default function App() {
       </main>
       
       {/* Persistent music player at the bottom */}
-      <MusicPlayer className=fixed bottom-16 left-0 right-0 max-w-5xl mx-auto"/>
+      <MusicPlayer className="fixed bottom-17 left-0 right-0 max-w-5xl mx-auto"/>
    <Footer className="fixed bottom-0 left-0 right-0"/>
     </div>
   )

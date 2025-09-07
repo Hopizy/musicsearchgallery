@@ -9,7 +9,7 @@ import Contact from './pages/Contact'
 export default function App() {
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-40 bg-[url('/backimage.jpg')] bg-cover bg-center">
+    <div className="min-h-screen bg-gray-50 pb-40 bg-[url('/backimage.jpg')]">
       {/* Header with navigation */}
       <header className="z-10 bg-red border-b">
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center gap-6">
